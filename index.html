@@ -1,42 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- reset CSS -->
-    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <!-- reset CSS -->
+  <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
 
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <!-- CSS style -->
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <!-- CSS style -->
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
-    <title>Document Title</title>
+  <title>Crystals Game</title>
+  <style type="text/css">
+    .crystal-image {
+      width: 300px;
+      height: 300px;
+    }
+  </style>
 </head>
+
 <body>
-    <div class="container">
+  <div class="container">
 
 
-      <div class="row">
-          <div class="col-xs-12 col-sm-6 col-md-8 col-lg-8"></div>
-          <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4"></div>
+    <div class="row">
+      <div class="jumbotron">
+        <h1>Week 4 Crystal Game</h1>
+        <p>Click on a crystal to increase the value, but don't go over the target.</p>
       </div>
-      <div class="row">
-          <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2"></div>
-          <div class="col-xs-12 col-sm-6 col-md-4 col-lg-6"></div>
-          <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4"></div>
+    </div>
+    <div class="panel-group">
+      <div class="panel panel-default container-fluid">
+        <div class="panel-heading row">
+          <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+            <h2>Number to Guess: <span id="number-to-guess"></span></h2>
+          </div>
+          <div class="text-center col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <div class="row">
+              <h3>Wins: <span id="wins"></span></h3>
+            </div>
+            <div class="row">
+              <h3>Losses: <span id="losses"></span></h3>
+            </div>
+          </div>
+          <!-- <div  class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                <h3>Losses: <span id="losses"></span></h3>
+              </div> -->
+        </div>
+        <div class="panel-body">
+          <!-- Note that this div is now empty. We will fill it dynamically -->
+          <div id="crystals" class="col-xs-2 col-sm-2 col-md-2 col-lg-2"></div>
+          <div id="crystals-blue" class="col-xs-2 col-sm-2 col-md-2 col-lg-2"></div>
+          <div id="crystals-green" class="col-xs-2 col-sm-2 col-md-2 col-lg-2"></div>
+          <div id="crystals-purple" class="col-xs-2 col-sm-2 col-md-2 col-lg-2"></div>
+          <div id="crystals-red" class="col-xs-2 col-sm-2 col-md-2 col-lg-2 "></div>
+        </div>
+        <div class="panel-body ">
+          <div id="crystals" class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+            <h2>Your Score is: <span id="user-score"></span></h2>
+          </div>
+        </div>
+        <!-- End of panel body -->
+          </div>
+        </div>
+      <div class="row ">
+          <div class="col-xs-12 col-sm-6 col-md-8 col-lg-8 "></div>
+          <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 "></div>
       </div>
-      <div class="row"></div>
+      <div class="row ">
+          <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2 "></div>
+          <div class="col-xs-12 col-sm-6 col-md-4 col-lg-6 "></div>
+          <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 "></div>
+      </div>
+      <div class="row "></div>
 
 
     </div>
+  <!-- External Javascript reference -->
+  <script src="assets/javascript/game.js "></script>
 </body>
 </html>
