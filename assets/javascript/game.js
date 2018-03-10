@@ -2,23 +2,26 @@
   var wins = 0;
   var losses = 0;
   var userScore = 0;
+  var min = 19;
+  var max = 120;
+  var banner = "";
+  var numberOptions = [10, 5, 3, 7];
 
   //get random target number
-  var targetNumber = Math.floor(Math.random() * 99) + 1;
-  // Math.floor(Math.random() * 99) + 1;
+  var targetNumber = Math.floor(Math.random() * (max + min + 1)) + min;
+  // Math.floor(Math.random() * (max - min + 1) ) + min;
 
-  var numberOptions = [10, 5, 3, 7];
-  for (var i = 0; i < numberOptions.length; i++) {
-    numberOptions[i] = Math.floor(Math.random() * 99) + 1;
-    console.log("gem " + i + ":" + numberOptions[i]);
+  function randomizer() {
+    for (var i = 0; i < numberOptions.length; i++) {
+      numberOptions[i] = Math.floor(Math.random() * (12 - 1 + 1)) + 1;
+      console.log("gem " + i + ":" + numberOptions[i]);
+    }
   }
+
+  randomizer();
 
   // Display Target Number
   $("#number-to-guess").text(targetNumber);
-
-  // Display the wins and losses
-  $("#wins").text(wins);
-  $("#losses").text(losses);
 
   // Display the 4 gem images
   $("#crystals-blue").html('<img src="/assets/images/blue_gem.png" alt=blue height="150" width="150"> ');
@@ -26,49 +29,66 @@
   $("#crystals-purple").html('<img src="/assets/images/purple_gem.png" alt=purple height="150" width="150"> ');
   $("#crystals-red").html('<img src="/assets/images/red_gem.png" alt=red height="150" width="150"> ');
 
-  // Displays the score
-  $("#user-score").text(userScore);
+  function outputRefresh() {
+    // Display the wins and losses
+    $("#wins").text(wins);
+    $("#losses").text(losses);
+    // Displays the score
+    $("#user-score").text(userScore);
+    //Displays Banner
+    $("#banner").text(banner);
+    // display all hidden data
+    console.log("wins: " + wins);
+    console.log("losses: " + losses);
+    console.log("banner: " + banner);
+    console.log("userScore: " + userScore + " targetNumber: " + targetNumber);
+  }
+
+  function logic() {
+    if(userScore == targetNumber) {
+      wins++;
+      banner = "YOU WIN!";
+      outputRefresh();
+      reset();
+    }
+    if(userScore > targetNumber){
+      losses++;
+      banner = "YOU LOOSE!"
+      outputRefresh();
+      reset();
+    }
+  }
+
+  function reset() {
+    targetNumber = Math.floor(Math.random() * (max + min + 1)) + min;
+    // Display Target Number
+    $("#number-to-guess").text(targetNumber);
+    userScore = 0;
+    banner = "";
+    randomizer();
+  }
 
   $("#crystals-blue").on("click", function() {
-    alert("Blue");
+    userScore = userScore + numberOptions[0];
+    // console.log("clicked blue");
+    outputRefresh();
+    logic();
   });
 
   $("#crystals-green").on("click", function() {
-    alert("Green");
+    userScore = userScore + numberOptions[1];
+    outputRefresh();
+    logic();
   });
 
   $("#crystals-purple").on("click", function() {
-    alert("Purple");
+    userScore = userScore + numberOptions[2];
+    outputRefresh();
+    logic();
   });
 
   $("#crystals-red").on("click", function() {
-    alert("Red");
-  });
-
-  // This time, our click event applies to every single crystal on the page. Not just one.
-  var crystals = $("#crystals");
-  crystals.on("click", ".crystal-image", function() {
-
-    // Determining the crystal's value requires us to extract the value from the data attribute.
-    // Using the $(this) keyword specifies that we should be extracting the crystal value of the clicked crystal.
-    // Using the .attr("data-crystalvalue") allows us to grab the value out of the "data-crystalvalue" attribute.
-    // Since attributes on HTML elements are strings, we must convert it to an integer before adding to the counter
-
-    var crystalValue = ($(this).attr("data-crystalvalue"));
-    crystalValue = parseInt(crystalValue);
-    // We then add the crystalValue to the user's "counter" which is a global variable.
-    // Every click, from every crystal adds to the global counter.
-    counter += crystalValue;
-
-    // All of the same game win-lose logic applies. So the rest remains unchanged.
-    alert("New score: " + counter);
-
-    if (counter === targetNumber) {
-      alert("You win!");
-    }
-
-    else if (counter >= targetNumber) {
-      alert("You lose!!");
-    }
-
+    userScore = userScore + numberOptions[3];
+    outputRefresh();
+    logic();
   });
