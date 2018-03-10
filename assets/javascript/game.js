@@ -21,10 +21,10 @@
   $("#losses").text(losses);
 
   // Display the 4 gem images
-  $("#crystals-blue").html('<img src="/assets/images/Blue_Gem.png" alt=blue height="150" width="150"> ');
-  $("#crystals-green").html('<img src="/assets/images/Green_Gem.png" alt=green height="150" width="150"> ');
-  $("#crystals-purple").html('<img src="/assets/images/Purple_Gem.png" alt=purple height="150" width="150"> ');
-  $("#crystals-red").html('<img src="/assets/images/Red_Gem.png" alt=red height="150" width="150"> ');
+  $("#crystals-blue").html('<img src="/assets/images/blue_gem.png" alt=blue height="150" width="150"> ');
+  $("#crystals-green").html('<img src="/assets/images/green_gem.png" alt=green height="150" width="150"> ');
+  $("#crystals-purple").html('<img src="/assets/images/purple_gem.png" alt=purple height="150" width="150"> ');
+  $("#crystals-red").html('<img src="/assets/images/red_gem.png" alt=red height="150" width="150"> ');
 
   // Displays the score
   $("#user-score").text(userScore);
