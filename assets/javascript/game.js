@@ -24,10 +24,10 @@
   $("#number-to-guess").text(targetNumber);
 
   // Display the 4 gem images
-  $("#crystals-blue").html('<img src="/assets/images/blue_gem.png" alt=blue height="150" width="150"> ');
-  $("#crystals-green").html('<img src="/assets/images/green_gem.png" alt=green height="150" width="150"> ');
-  $("#crystals-purple").html('<img src="/assets/images/purple_gem.png" alt=purple height="150" width="150"> ');
-  $("#crystals-red").html('<img src="/assets/images/red_gem.png" alt=red height="150" width="150"> ');
+  $("#crystals-blue").html('<img src="./assets/images/blue_gem.png" alt=blue height="150" width="150"> ');
+  $("#crystals-green").html('<img src="./assets/images/green_gem.png" alt=green height="150" width="150"> ');
+  $("#crystals-purple").html('<img src="./assets/images/purple_gem.png" alt=purple height="150" width="150"> ');
+  $("#crystals-red").html('<img src="./assets/images/red_gem.png" alt=red height="150" width="150"> ');
 
   function outputRefresh() {
     // Display the wins and losses

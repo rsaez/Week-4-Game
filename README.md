@@ -4,14 +4,14 @@ The number guessing game.
 
 ## Getting Started
 
-Click on the gems to add up to the Number to guess. Caveat you don't know what random value each gem will add up to. You win when your score matches the number to guess, go over and the you loose.
+Click on the gems to add up to the Number to guess. Caveat you don't know what random value each gem will add up to. You win when your score matches the number to guess, go over and the you loose. You can play this game NOW: [Crystal  Game](https://rsaez.github.io/Week-4-Game/). You can also clone or download a copy of this game by clicking the link on the top-right.
 
 ### Prerequisites
 
 Your favorite web browser.
 
 ```
-Chrome, etc
+Chrome, Safari, Firefox, IE, Edge, etc
 ```
 
 ## Built With
